@@ -22,6 +22,7 @@ import pose_camera
 
 from dronekit import connect
 
+# Manual adressing for the moment -- Need to add --connect to the parser
 #connection_string = ('tcp:192.168.2.250:5763')
 connection_string = ('tcp:192.168.2.237:5763')
 
@@ -126,6 +127,7 @@ def main():
             #ch2 = int(righty * 1200)+900
             # ch1 = int((rightx-0.5) * 2400)+900
             
+            #These values have been scaled down , making control easier
             ch3 = int(lefty * 600)+1200
             ch4 = int(leftx * 1200)+1200
             ch2 = int(righty * 600)+1200
@@ -133,7 +135,8 @@ def main():
             
             print (ch1,ch2,ch3,ch4)
             #print("Set Ch1-Ch8 overrides to 110-810 respectively")
-            vehicle.channels.overrides = {'1': ch1, '2': ch2,'3': ch3,'4':ch4 ,'5':1500,'6':1500,'7':1500,'8':1500}
+            vehicle.channels.overrides = {'1': ch1, '2': ch2,'3': ch3,'4':ch4 ,'5':1000,'6':1000,'7':1000,'8':1000}
+            #Need to reduce command stream to 10 Hz, so we don<t get buffers overflow and lag
             time.sleep(0.1)
 
 
