@@ -1,4 +1,4 @@
-# Gesture-Controle
+# Gesture-Control
 Use AI based Gestures to Control a Quadcopter (or others) using Mavlink RC-OVERRIDE commands
 
 We use PoseNet models that are quantized and optimized for use on Coral's Edge TPU USB Stick on a RaspBerry Pi 4.
